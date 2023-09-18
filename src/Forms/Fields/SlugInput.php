@@ -32,7 +32,7 @@ class SlugInput extends TextInput
 
     protected bool|Closure $slugInputUrlVisitLinkVisible = true;
 
-    protected Closure|null $slugInputModelName = null;
+    protected ?Closure $slugInputModelName = null;
 
     protected string|Closure|null $slugLabelPostfix = null;
 

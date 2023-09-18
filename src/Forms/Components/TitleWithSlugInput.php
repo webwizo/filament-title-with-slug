@@ -15,7 +15,6 @@ use Illuminate\Support\Str;
 class TitleWithSlugInput
 {
     public static function make(
-
         // Model fields
         string $fieldTitle = null,
         string $fieldSlug = null,
@@ -68,8 +67,8 @@ class TitleWithSlugInput
             ->afterStateUpdated(
                 function (
                     $state,
-                    Closure $set,
-                    Closure $get,
+                    Set $set,
+                    Get $get,
                     string $context,
                     ?Model $record,
                     TextInput $component
