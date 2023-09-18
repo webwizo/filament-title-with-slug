@@ -102,7 +102,7 @@ class SlugInput extends TextInput
         return $this->evaluate($this->labelPrefix);
     }
 
-    public function readOnly(?Closure $condition): static
+    public function readOnly(Closure|bool $condition = true): static
     {
         $this->readOnly = $condition;
 
