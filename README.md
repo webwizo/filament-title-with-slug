@@ -314,7 +314,7 @@ This is needed in order to set Filament's "ignorable" parameter correctly.
 ```php
 \Camya\Filament\Forms\Components\TitleWithSlugInput::make(
     titleRuleUniqueParameters: [
-        'callback' => fn(Unique $rule) => $rule->where('is_published', 1),
+        'modifyRuleUsing' => fn(Unique $rule) => $rule->where('is_published', 1),
         'ignorable' => fn(?Model $record) => $record,
     ],
 )
@@ -328,7 +328,7 @@ Available array keys:
 
 ```php
 'ignorable' (Model | Closure)
-'callback' (?Closure)
+'modifyRuleUsing' (?Closure)
 'ignoreRecord' (bool)
 'table' (string | Closure | null)  
 'column' (string | Closure | null) 
@@ -523,7 +523,7 @@ Below is an example with some defaults overridden.
         'string',
     ],
     titleRuleUniqueParameters: [
-        'callback' => fn(Unique $rule) => $rule->where('is_published', 1),
+        'modifyRuleUsing' => fn(Unique $rule) => $rule->where('is_published', 1),
         'ignorable' => fn(?Model $record) => $record,
     ],
     titleIsReadonly: fn($context) => $context !== 'create',
@@ -537,7 +537,7 @@ Below is an example with some defaults overridden.
         'string',
     ],
     slugRuleUniqueParameters: [
-        'callback' => fn(Unique $rule) => $rule->where('is_published', 1),
+        'modifyRuleUsing' => fn(Unique $rule) => $rule->where('is_published', 1),
         'ignorable' => fn(?Model $record) => $record,
     ],
     slugIsReadonly: fn($context) => $context !== 'create',
